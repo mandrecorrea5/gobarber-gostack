@@ -11,9 +11,9 @@ interface Request {
 
 class UptadeUserAvatarService {
   public async execute({ user_id, avatarFilename }: Request): Promise<User> {
-    const userRepository = getRepository(User);
+    const usersRepository = getRepository(User);
 
-    const user = await userRepository.findOne(user_id);
+    const user = await usersRepository.findOne(user_id);
 
     if(!user) {
       throw new Error('Only authenticated users can change avatar.');
@@ -30,7 +30,7 @@ class UptadeUserAvatarService {
 
     user.avatar = avatarFilename
 
-    await userRepository.save(user);
+    await usersRepository.save(user);
 
     return user;
   }
