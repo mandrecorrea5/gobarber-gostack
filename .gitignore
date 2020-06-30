@@ -5,3 +5,6 @@
 src/.DS_Store
 src/database/.DS_Store
 src/database/migrations/.DS_Store
+
+tmp/*
+!tmp/.gitkeep
